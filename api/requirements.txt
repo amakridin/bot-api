@@ -1,0 +1,12 @@
+requests
+pathlib
+file_read_backwards
+flask
+uwsgi
+cx_oracle
+jira
+auth
+ldap3
+xmltodict
+redis
+pika

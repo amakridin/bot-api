@@ -1,0 +1,13 @@
+token: ******
+jira: http://jira.domain.ru
+domain: domain.ru
+ldap_server: domain.ru
+redis_host: redis-app.domain.ru
+redis_port: 6379
+redis_password: ******
+redis_users: 0
+redis_alarms: 1
+redis_cmdb: 2
+redis_chats: 3
+redis_charts: 4
+redis_common: 6

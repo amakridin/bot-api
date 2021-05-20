@@ -1,0 +1,32 @@
+before_script:
+ - docker info
+ - docker login -u $CI_DEPLOY_USER -p $CI_DEPLOY_PASSWORD $DOCKER_REGISTRY
+stages:
+ - build
+ - pushing
+ - deploy
+variables:
+ CONTAINER_IMAGE: bot-api-docker-local.unixrepo.domain.ru/api
+build:
+ stage: build
+ script:
+ - docker build -t bot-api .
+ tags:
+ - bld01
+pushing:
+ stage: pushing
+ script:
+ - docker tag bot-api ${CONTAINER_IMAGE}:current
+ - docker tag bot-api ${CONTAINER_IMAGE}:${CI_COMMIT_SHORT_SHA}
+ - docker push ${CONTAINER_IMAGE}:current
+ - docker push ${CONTAINER_IMAGE}:${CI_COMMIT_SHORT_SHA}
+ tags:
+ - bld01
+deploy:
+ stage: deploy
+ image: docker.unixrepo.domain.ru/rhel:7.7
+ script:
+ - wget docker.unixrepo.domain.ru/kubernetes-tools-local/kubectl && chmod +x kubectl
+ - ./kubectl apply -f deployment/api.yaml -f deployment/service-api.yaml --kubeconfig=deployment/config2 --force
+ tags:
+ - bld01

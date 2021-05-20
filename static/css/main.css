@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  padding: 20px;
+}
+textarea
+{
+  width:100%;
+}
+.textwrapper
+{
+  border:1px solid #999999;
+  margin:5px 0;
+  padding:3px;
+}
+.common-table tbody tr:hover td{
+	background: #DDD;
+}
+.common-table thead{
+  width: 100%;
+  table-layout: fixed;
+  height: 30px;
+}
+
+.common-table th,
+.common-table td {
+  padding: 5px;
+  overflow:hidden;
+  word-break: break-all;
+}
+
+.common-table thead {
+  background-color: #333;
+  color: #FDFDFD;
+  width: 100%;
+}
+
+.common-table thead tr {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.common-table thead tr {
+  width: 100%;
+}
+
+.common-table tbody {
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: calc(100vh - 200px);
+}
+
+.common-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.clmn50 {
+  width:50px;
+  text-align:center;
+}
+.clmn100 {
+  width:100px;
+}
+.clmn150 {
+  width:150px;
+}
+.clmn200 {
+  width:200px;
+}
+.clmn250 {
+  width:250px;
+}
+.clmn300 {
+  width:300px;
+}
+.clmn350 {
+  width:350px;
+}
+.clmn400 {
+  width:400px;
+}
+.clmn450 {
+  width:450px;
+}
+.clmn500 {
+  width:500px;
+}
+.clmn600 {
+  width:500px;
+}
+.clmn700 {
+  width:500px;
+}
